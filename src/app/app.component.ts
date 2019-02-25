@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mental-health';
+  constructor(private snackBar: MatSnackBar) {}
 
   test(){
-    alert(`I Love You My Sardain!`);
+    this.snackBar.open(`I Love You My Sardain!`, `OKAY`, {
+      duration: 2000,
+    });
   }
 }
