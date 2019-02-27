@@ -1,8 +1,20 @@
-@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
-@import '@angular/material/prebuilt-themes/purple-green.css';
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
 
-/* You can add global styles to this file, and also import other style files */
-body{
-  font-family: Arial, Helvetica, sans-serif;
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// **Be sure that you only ever include this mixin once!**
+@include mat-core();
+
+// Define the default theme (same as the example above).
+$mental-health-app-primary: mat-palette($mat-green);
+$mental-health-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$mental-health-app-theme:   mat-light-theme($mental-health-app-primary, $mental-health-app-accent);
+
+// Include the default theme styles.
+@include angular-material-theme($mental-health-app-theme);
+
+body {
   margin: 0;
- }
+  background: #EEE;
+}
