@@ -1,0 +1,13 @@
+<mat-card *ngFor="let publication of publications$ | async;">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ publication.title }}</mat-card-title>
+    <mat-card-subtitle>{{ publication.author.name }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>{{ publication.text }}</mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+    <button mat-button>COMMENTS ({{ publication.comments.length }})</button>
+  </mat-card-actions>
+</mat-card>

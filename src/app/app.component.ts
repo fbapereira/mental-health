@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
+import { PublicationService } from './services/publication.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,12 @@ import { MatSnackBar } from '@angular/material';
 })
 export class AppComponent {
   title = 'mental-health';
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar, private p: PublicationService) { }
 
-  test(){
-    this.snackBar.open(`I Love You My Sardain!`, `OKAY`, {
-      duration: 2000,
+  test() {
+    this.p.get().subscribe((a) => {
+      debugger;
+      console.log(a);
     });
   }
 }

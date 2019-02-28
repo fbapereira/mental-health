@@ -16,6 +16,8 @@ export class UserService {
   ) {
   }
 
+  users$ = this.db.collection(`users/`).valueChanges();
+
   create(user: User): Observable<void> {
     return from(this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
       .then((userCredential: firebase.auth.UserCredential) => {

@@ -17,12 +17,14 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { PublicationViewComponent } from './publication-view/publication-view.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    PublicationViewComponent,
   ],
   imports: [
     BrowserModule,
