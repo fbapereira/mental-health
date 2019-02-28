@@ -18,6 +18,7 @@ import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { PublicationViewComponent } from './publication-view/publication-view.component';
+import { PublicationWriteComponent } from './publication-write/publication-write.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { PublicationViewComponent } from './publication-view/publication-view.co
     AppComponent,
     LoginComponent,
     PublicationViewComponent,
+    PublicationWriteComponent,
   ],
   imports: [
     BrowserModule,

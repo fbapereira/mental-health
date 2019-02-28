@@ -18,13 +18,18 @@ export class PublicationService {
   ) {
   }
 
+  create(newPublication: Publication): Observable<any> {
+    return of(this.db.collection<Publication>(`publications/`).add(newPublication));
+  }
+
   get(): Observable<Publication[]> {
-    const publications$ = this.db.collection<Publication>(`publications/`, ref => ref.limit(10)).valueChanges()
+    const publications$ = this.db.collection<Publication>(`publications/`, ref => ref.limit(10)).valueChanges();
 
     return combineLatest(publications$, this.userService.users$)
       .pipe(
         map(([publications, users]) => {
           publications.forEach((publication: Publication) => {
+            if (!publication.author) { return; }
             publication.author = users.filter((user: User) => user.uid === publication.author.uid)[0] as User;
           });
           return publications;

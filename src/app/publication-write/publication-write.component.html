@@ -1,0 +1,13 @@
+<mat-card>
+  <form novalidate autocomplete="off" [formGroup]="form" (submit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Input" formControlName="title">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Write your situation..." formControlName="text"></textarea>
+    </mat-form-field>
+    <div class="form-action" align="end">
+      <button mat-button color="primary"  [disabled]="form.invalid">Publish</button>
+    </div>
+  </form>
+</mat-card>
