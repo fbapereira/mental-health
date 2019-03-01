@@ -1,0 +1,56 @@
+mat-toolbar{
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.mat-toolbar {
+  color:white;
+}
+
+.example-fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+
+@media screen and (max-width: 700px) {
+  .hide-into-mobile{
+    display: none;
+  }
+  .hide-into-desktop{
+    display: block;
+  }
+}
+
+.hide-into-mobile{
+  display: block;
+}
+.hide-into-desktop{
+  display: none;
+}
+
+
+// Media Queries in Sass 3.2
+//
+// These mixins make media queries a breeze with Sass.
+// The media queries from mobile up until desktop all
+// trigger at different points along the way
+//
+// And important point to remember is that and width
+// over the portrait width is considered to be part of the
+// landscape width. This allows us to capture widths of devices
+// that might not fit the dimensions exactly. This means the break
+// points are seamless.
+$mq-mobile-landscape	: 480px !default;
+
+// Both portrait and landscape
+@mixin mobile-only {
+	@media (max-width : $mq-mobile-landscape) {
+		@content;
+	}
+}
+
+// Everything larger than a landscape tablet but less than or equal to the desktop
+@mixin desktop-only {
+	@media only screen and (min-width : $mq-mobile-landscape + 1) {
+		@content;
+	}
+}

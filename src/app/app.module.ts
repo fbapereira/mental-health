@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './shared/material/material.module';
 import { LoginComponent } from './login/login.component';
 
@@ -19,6 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { PublicationViewComponent } from './publication-view/publication-view.component';
 import { PublicationWriteComponent } from './publication-write/publication-write.component';
+import { LayoutModule } from './layout/layout.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -32,15 +33,19 @@ import { PublicationWriteComponent } from './publication-write/publication-write
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule,
+    LayoutModule,
     MaterialModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FlexLayoutModule.withConfig({
+      useColumnBasisZero: false,
+      printWithBreakpoints: ['md', 'lt-lg', 'lt-xl', 'gt-sm', 'gt-xs']
+    }),
   ],
   exports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     AuthService,
