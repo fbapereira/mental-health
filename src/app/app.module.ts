@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './shared/material/material.module';
-import { LoginComponent } from './login/login.component';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -20,12 +19,12 @@ import { PublicationViewComponent } from './publication-view/publication-view.co
 import { PublicationWriteComponent } from './publication-write/publication-write.component';
 import { LayoutModule } from './layout/layout.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { UserModule } from './user/user.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     PublicationViewComponent,
     PublicationWriteComponent,
   ],
@@ -34,6 +33,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BrowserAnimationsModule,
     AppRoutingModule,
     LayoutModule,
+    UserModule,
     MaterialModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),

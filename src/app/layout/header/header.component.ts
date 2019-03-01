@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +9,15 @@ import { MediaObserver } from '@angular/flex-layout';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  constructor(private media: MediaObserver) {
-    this.media.media$.subscribe((a) => {
-      console.log({ a });
+  user$ = this.userService.user$;
+  user: User;
+
+  constructor(private media: MediaObserver, private userService: UserService) {
+    this.userService.user$.subscribe((a) => {
+      this.user = a;
     });
-    console.log(
-      this.media.isActive('md')
-    )
+  }
+  logout(): void {
+    this.userService.logout();
   }
 }

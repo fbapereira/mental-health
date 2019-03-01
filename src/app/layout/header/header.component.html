@@ -3,39 +3,41 @@
     <span>WellBeing</span>
   </mat-toolbar-row>
   <mat-toolbar-row *ngIf="media.isActive('xs')">
-    <button mat-button routerLink="/home">Publications</button>
-    <button mat-button routerLink="/home">Store</button>
+    <button mat-button routerLink="/">Publications</button>
+    <button mat-button routerLink="/">Store</button>
     <button mat-button [matMenuTriggerFor]="loginMenuMob">More</button>
     <span class="example-fill-remaining-space"></span>
-    <button mat-icon-button [matMenuTriggerFor]="loginMenuMob">
+    <button mat-icon-button [matMenuTriggerFor]="loginMenuMob" *ngIf="user">
       <mat-icon>account_circle</mat-icon>
     </button>
+    <button mat-button routerLink="/login" *ngIf="!user">Log In</button>
     <mat-menu #appMenuMob="matMenu">
       <button mat-menu-item>Settings</button>
       <button mat-menu-item>Help</button>
     </mat-menu>
     <mat-menu #loginMenuMob="matMenu">
       <button mat-menu-item>Account Settings</button>
-      <button mat-menu-item>Logout</button>
+      <button mat-menu-item (click)="logout()">Logout</button>
     </mat-menu>
   </mat-toolbar-row>
   <mat-toolbar-row *ngIf="!media.isActive('xs')">
     <span>WellBeing</span>
     <span class="example-spacer"></span>
-    <button mat-button routerLink="/home">Publications</button>
-    <button mat-button routerLink="/home">Store</button>
+    <button mat-button routerLink="/">Publications</button>
+    <button mat-button routerLink="/">Store</button>
     <button mat-button [matMenuTriggerFor]="appMenu">More</button>
     <span class="example-fill-remaining-space"></span>
-    <button mat-icon-button [matMenuTriggerFor]="loginMenu">
+    <button mat-icon-button [matMenuTriggerFor]="loginMenu" *ngIf="user">
       <mat-icon>account_circle</mat-icon>
     </button>
+    <button mat-button routerLink="/login" *ngIf="!user">Log In</button>
     <mat-menu #appMenu="matMenu">
       <button mat-menu-item>Settings</button>
       <button mat-menu-item>Help</button>
     </mat-menu>
     <mat-menu #loginMenu="matMenu">
       <button mat-menu-item>Account Settings</button>
-      <button mat-menu-item>Logout</button>
+      <button mat-menu-item (click)="logout()">Logout</button>
     </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>

@@ -1,25 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { LoginComponent } from './login/login.component';
 import { MaterialModule } from '../shared/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
+    LoginComponent,
+    SignInComponent,
   ],
   exports: [
-    HeaderComponent,
+    CommonModule,
+    LoginComponent,
+    SignInComponent,
   ],
   imports: [
     CommonModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule,
-    RouterModule,
+    FlexLayoutModule
   ],
 })
-export class LayoutModule { }
+export class UserModule { }
