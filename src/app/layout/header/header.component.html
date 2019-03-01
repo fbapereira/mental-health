@@ -3,7 +3,7 @@
     <span>WellBeing</span>
   </mat-toolbar-row>
   <mat-toolbar-row *ngIf="media.isActive('xs')">
-    <button mat-button routerLink="/">Publications</button>
+    <button mat-button routerLink="/publication">Publications</button>
     <button mat-button routerLink="/">Store</button>
     <button mat-button [matMenuTriggerFor]="loginMenuMob">More</button>
     <span class="example-fill-remaining-space"></span>
@@ -23,7 +23,7 @@
   <mat-toolbar-row *ngIf="!media.isActive('xs')">
     <span>WellBeing</span>
     <span class="example-spacer"></span>
-    <button mat-button routerLink="/">Publications</button>
+    <button mat-button routerLink="/publication">Publications</button>
     <button mat-button routerLink="/">Store</button>
     <button mat-button [matMenuTriggerFor]="appMenu">More</button>
     <span class="example-fill-remaining-space"></span>

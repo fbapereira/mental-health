@@ -15,18 +15,15 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { PublicationViewComponent } from './publication-view/publication-view.component';
-import { PublicationWriteComponent } from './publication-write/publication-write.component';
 import { LayoutModule } from './layout/layout.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { UserModule } from './user/user.module';
+import { PublicationModule } from './publication/publication.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PublicationViewComponent,
-    PublicationWriteComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +31,7 @@ import { UserModule } from './user/user.module';
     AppRoutingModule,
     LayoutModule,
     UserModule,
+    PublicationModule,
     MaterialModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),

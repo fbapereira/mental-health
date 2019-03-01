@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PublicationService } from '../services/publication.service';
-import { Publication } from '../models/publication.model';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
+import { Publication } from 'src/app/models/publication.model';
+import { PublicationService } from 'src/app/services/publication.service';
 
 @Component({
   selector: 'app-publication-write',
